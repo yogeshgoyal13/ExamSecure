@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    padding: 70px 10px 40px 10px;
+}
+
+.welcome {
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.marks {
+    font-weight: 500;
+    font-size: 20px;
+    /* text-decoration: underline; */
+    text-align: center;
+}
+
+/* table, td {
+    border: 1px solid black;
+}
+  
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thd1, .thd2, .thd3 {
+    font-weight: 500;
+    text-align: center;
+}
+
+.thd1 {
+    width: 50px;
+}
+
+.thd2 {
+    width: 200px;
+    text-align: center;
+}
+
+.thd3 {
+    width: 150px;
+    text-align: center;
+}
+
+.cn {
+    text-align: center;
+}
+
+.ryt {
+    text-align: right;
+    padding-right: 5px;
+} */

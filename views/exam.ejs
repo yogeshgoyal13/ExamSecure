@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/Images/ticon.png" type="image/x-icon">
+
+        <!-- Bootstrap CSS -->
+        <link 
+            rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+            crossorigin="anonymous"
+        >
+
+        <title>Exam</title>
+
+        <link rel="stylesheet" href="/CSS/exam.css">
+    </head>
+    <body>
+
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-dark bg-primary fixed-top">
+			<a class="navbar-brand" href="#">
+				<h4>
+					ExamSecure
+				</h4>
+			</a>
+        </nav>
+
+        <div class="main">
+            <div id="timer">Timer</div>
+            <p class="welcome">Welcome <%= user.name %>, <%= user.rollNo %></p>
+            
+            <div class="header">
+                <p><span class="header_inner">Exam :</span> <%= exam.description %></p>
+
+                <p><span class="header_inner">Maximum Marks :</span> <%= exam.marks %></p>
+            </div>
+                
+            <p><span class="header_inner">Marking Scheme :</span>
+                <ul>
+                    <li>For each Correct Answer &#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;: +4</li>
+                    <li>For each Unattempted Question : 0</li>
+                    <li>For each Wrong Answer &#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;: -1</li>
+                </ul>
+            </p>
+            <hr>
+            
+            <form action="/examSubmitted" method="POST">
+                <% for(let i=0; i<exam.questions.length; i++){ %>
+                <div class="ques">
+                    <p class="quesDesc">Q<%= i+1 %>. <%= exam.questions[i].question %></p>
+                    
+                    <input type="radio" id="ans<%= i+1 %>_op1" name="ans<%= i+1 %>" value="A">
+                    A) 
+                    <label for="ans<%= i+1 %>_op1"><%= exam.questions[i].optionA %></label><br>
+            
+                    <input type="radio" id="ans<%= i+1 %>_op2" name="ans<%= i+1 %>" value="B">
+                    B)
+                    <label for="ans<%= i+1 %>_op2"><%= exam.questions[i].optionB %></label><br>
+            
+                    <input type="radio" id="ans<%= i+1 %>_op3" name="ans<%= i+1 %>" value="C">
+                    C)
+                    <label for="ans<%= i+1 %>_op3"><%= exam.questions[i].optionC %></label><br>
+            
+                    <input type="radio" id="ans<%= i+1 %>_op4" name="ans<%= i+1 %>" value="D">
+                    D)
+                    <label for="ans<%= i+1 %>_op4"><%= exam.questions[i].optionD %></label><br>
+                </div>
+
+                    <% if(i != exam.questions.length-1){ %>
+                        <hr class="hr">
+                    <% } %>
+                <% } %>
+                
+                <div class="wrapper">
+                    <button type="submit" class="submitButton btn btn-primary" id="quiz" name="submitExamButton" value="<%= exam.examId %> <%= user.rollNo %>">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <script src="/JS/exam.js"></script>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script 
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+            crossorigin="anonymous"
+        ></script>
+        <script 
+             src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+            crossorigin="anonymous"
+        ></script>
+        <script 
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" 
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

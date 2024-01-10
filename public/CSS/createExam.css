@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    padding: 70px 10px 40px 10px;
+}
+
+.welcome {
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.addNewQuestion, .storeExam {
+    margin: 10px auto
+}
+
+.examForm, .addNewQuestion {
+    padding-left: 20px;
+}
+
+.greyArea {
+    background-color: rgb(209, 209, 209);
+    /* color: white; */
+}
+
+.boldText {
+    font-weight: 500;
+}
+
+.co {
+    width: 280px;
+}
+
+hr {
+    background-color: black;
+    width: 400px;
+}
+
+.examForm {
+    display: inline;
+}
+
+.storeExam {
+    margin-left: 40%;
+}
+
+.addNewQuestion {
+    margin-left: 40px;
+}

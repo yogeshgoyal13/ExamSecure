@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    padding: 70px 10px 40px 10px;
+}
+
+.ques {
+    background-color: #e5e5e5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border-radius: 20px;
+}
+
+.welcome {
+    text-align: center;
+    font-weight: 500;
+    font-size: large;
+}
+
+.hr {
+    width: 20vw;
+    border-top: 1px solid;
+}
+
+.wrapper, .header {
+    text-align: center;
+}
+
+.submitButton {
+    margin-top: 20px;
+}
+
+.header_inner, .quesDesc {
+    font-weight: 500;
+}
+
+#timer {
+    position: fixed;
+    z-index: 1;
+    background-color: rgb(216, 62, 62);
+    padding: 5px;
+    border-radius: 5px;
+    right: 1%;
+    text-align: center;
+    color: white;
+}
